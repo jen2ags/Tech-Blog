@@ -5,7 +5,7 @@ const { Post } = require('../routes/api/post-routes');
 //Define post table columns
 Post.init(
     {
-
+        
     },
     {
         sequelize,

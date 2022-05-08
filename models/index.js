@@ -5,3 +5,6 @@ const { contentType } = require('express/lib/response');
 
 
 //Associations between tables
+
+
+module.exports = { User, Post, Comment};
