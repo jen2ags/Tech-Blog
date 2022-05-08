@@ -13,8 +13,15 @@ class User extends Model {
 User.init(
     {
 
+    },
+    {
+        sequelize,
+        timestamp: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'User'
     }
-)
+);
 
 module.exports = User;
 
