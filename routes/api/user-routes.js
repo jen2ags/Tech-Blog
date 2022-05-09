@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const res = require('express/lib/response');
-const { User } = require('../../models');
+const { User, Post } = require('../../models');
 const { bulkCreate } = require('../../models/User');
 
 class User extends Model {
@@ -22,9 +22,24 @@ router.get('/', (req, res) => {
 // GET /api/users/1
 router.get('/:id', (req, res) => {
     User.findOne({
+        attributes: { exclude: ['password'] },
         where: {
             id: req.params.id
-        }
+        },
+        include: [
+            {
+                model: Post,
+                attributes: ['id', 'title', 'blog_text', 'created_at']
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text','created_at'],
+                include: {
+                    model: Post,
+                    attributes: ['title', 'blog_text']
+                }
+            },
+        ]
     })
         .then(dbUserData => {
             if (!dbUserData) {
