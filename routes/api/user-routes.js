@@ -1,13 +1,8 @@
 const router = require('express').Router();
-const res = require('express/lib/response');
-const { User, Post } = require('../../models');
-const { bulkCreate } = require('../../models/User');
 
-class User extends Model {
-    checkPassword(loginPw) {
-        return bcrypt.compareSync(loginPw, this.password);
-    }
-}
+const { User, Post } = require('../../models');
+
+
 
 // GET /api/users
 router.get('/', (req, res) => {
