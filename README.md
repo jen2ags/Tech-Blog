@@ -1,24 +1,20 @@
 # Tech-Blog
 
 ## Purpose
-The purpose of creating the Tech Blog is so users that are interested in tech can post about various
+The purpose of creating the Tech Blog is so users that are interested in tech can post about various topics. The user will be able to edit and delete their post as well as make comments on other user's posts.
 
 ## Built With
 * HTML
 * CSS
 * JavaScript
-* JQuery
-* Bulma
-* Google Fonts
-* Youtube API
-* lyrics.ovh API
+
 
 ## Website
-https://jen2ags.github.io/Karaoke-Kings/
+https://github.com/jen2ags/Tech-Blog
 
 ## Screen Shot
-![Screenshot Karaoke Kings](https://github.com/jen2ags/Karaoke-Kings/blob/develop/assets/images/karaoke%20kings%20screenshot%20final.png)
+![Screenshot]()
 
 
 ## Contribution
-Made by Jennifer Jennings, Mason Urrabas & Cheryl Cruz
+Made by Jennifer Jennings
