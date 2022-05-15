@@ -1,6 +1,5 @@
 const router = require('express').Router();
-
-const { User, Post } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
 
 
@@ -33,7 +32,7 @@ router.get('/:id', (req, res) => {
                 attributes: ['id', 'comment_text', 'created_at'],
                 include: {
                     model: Post,
-                    attributes: ['title', 'blog_text']
+                    attributes: ['title']
                 }
             },
         ]
@@ -55,6 +54,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
+        email: req.body.email,
         password: req.body.password
     })
         .then(dbUserData => {
@@ -66,12 +66,16 @@ router.post('/', (req, res) => {
                 res.json(dbUserData);
             });
         })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
-            username: req.body.username
+            email: req.body.email
         }
     })
         .then(dbUserData => {
