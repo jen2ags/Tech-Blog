@@ -1,18 +1,13 @@
-<section class="posts">
-
-    {{#each post as |post|}}
-
-    {{> post-info post}}
-    
-    {{/each}}
-
-</section>
-
-//lesson
 <ol class="post-list">
+
   {{#each posts as |post|}}
+
   <li>
+
     {{> post-info post }}
+
   </li>
+
   {{/each}}
+  
 </ol>
