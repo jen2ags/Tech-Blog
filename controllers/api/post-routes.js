@@ -66,7 +66,7 @@ router.post('/', withAuth, (req,res) => {
     Post.create({
         title: req.body.title,
         blog_text: req.body.blog_text,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
     })
     .then (dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -79,7 +79,7 @@ router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
             title: req.body.title,
-            blog_text: req.params.blog_text
+            blog_text: req.body.blog_text
         },
         {
             where: {

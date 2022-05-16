@@ -6,5 +6,7 @@
            <div>Created by {{user.username}} on {{format_date created_at}}</div>
     </div>
        <div class="card-content"> {{blog_text}}</div>
+       <a href="/posts/{{id}}">{{comments.length}}
+       {{format_plural "comment" comments.length}}</a>
 </article>
 

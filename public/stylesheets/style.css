@@ -45,7 +45,7 @@
   textarea, input {
     padding: .5%;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid lightgrey;
   }
   
   textarea:focus, input:focus {
@@ -76,7 +76,7 @@
   }
   
   header {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid lightgrey;
     display: flex;
     justify-content: space-between;
     align-items: center;
